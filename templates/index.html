@@ -1,0 +1,44 @@
+  <h1 id="randtext"><span class="waiting">|</span></h1>
+  {% extends 'main.html' %}
+  {% block content %}
+  <div class="login">
+    <form>
+      <h1>LOGIN</h1>
+      <span class="uname"><input id="userName" placeholder="Username" type="text"></span>
+      <span class="uname"><input id="passWord" placeholder="Password" type="text"></span>
+      <button type="button" onclick="checkPassword()">Log-in</button>
+    </form>
+  </div>
+  <section id="poster">
+    <div id="posterImage">
+      <img src="https://spitfireaudio.imgix.net/77a191f4-76bc-460a-bed7-8d36c2b02653/LOKI2.jpeg?auto=format&crop=entropy&fit=crop&fm=jpg&h=630&q=80&rect=148%2C0%2C1621%2C1080&w=1200" alt="Loki" srcset="">
+      <div class="posterDesc">
+        <h3>Loki</h3>
+      </div>
+      <img src="https://spitfireaudio.imgix.net/77a191f4-76bc-460a-bed7-8d36c2b02653/LOKI2.jpeg?auto=format&crop=entropy&fit=crop&fm=jpg&h=630&q=80&rect=148%2C0%2C1621%2C1080&w=1200" alt="Loki" srcset="">
+      <div class="posterDesc">
+        <h3>Loki-2</h3>
+      </div>
+      <img src="https://spitfireaudio.imgix.net/77a191f4-76bc-460a-bed7-8d36c2b02653/LOKI2.jpeg?auto=format&crop=entropy&fit=crop&fm=jpg&h=630&q=80&rect=148%2C0%2C1621%2C1080&w=1200" alt="Loki" srcset="">
+      <div class="posterDesc">
+        <h3>Loki-3</h3>
+      </div>
+    </div>
+  </section>
+  <section class="main">
+      <div id="movies">
+    {% for movie in movies %}
+        <div class ="movie"><a href="{% url 'movie' movie.title_to_url %}"><img src="{{movie.images}}"><span class="movie_title">{{movie.title}}</span></a></div>
+    {% endfor %}
+      </div>
+    <ul class="recs">
+      <h2>Recommendations</h2>
+      <li>Thor</li>
+      <li>Hulk</li>
+      <li>Spider</li>
+      <li>Cap</li>
+      <li>Black</li>
+      <li>Black</li>
+    </ul>
+  </section>
+  {% endblock content %}
